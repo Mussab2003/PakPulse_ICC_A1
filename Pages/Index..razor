@@ -1,0 +1,168 @@
+@page "/"
+
+<PageTitle>PakPulse - Project Introduction</PageTitle>
+
+<section class="hero">
+    <div class="hero-container">
+        <h2>PakPulse</h2>
+        <p>Cloud-Based Real-Time Local News & Community Alert System</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar primary"></span>
+            <h3>Group Details</h3>
+        </div>
+        <div class="grid grid-2">
+            <div class="info-box">
+                <p class="label">Course</p>
+                <p class="value">Introduction to Cloud Computing</p>
+            </div>
+            <div class="info-box secondary">
+                <p class="label">Instructor</p>
+                <p class="value">Muhammad Sudais</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h4 style="font-size: 1.25rem; font-weight: bold; color: #0f172a; margin-bottom: 1rem;">Team Members</h4>
+            <div class="team-grid">
+                <div class="team-member leader">
+                    <p class="role">Project Lead</p>
+                    <p class="name">Muhammad Mussab</p>
+                    <p class="id">22K-4146</p>
+                </div>
+                <div class="team-member">
+                    <p class="role">Team Member</p>
+                    <p class="name">Ilyas Moiz</p>
+                    <p class="id">22K-4255</p>
+                </div>
+                <div class="team-member">
+                    <p class="role">Team Member</p>
+                    <p class="name">Daniyal Saeed Dani</p>
+                    <p class="id">22K-4233</p>
+                </div>
+                <div class="team-member">
+                    <p class="role">Team Member</p>
+                    <p class="name">Dawood Adnan</p>
+                    <p class="id">22K-4663</p>
+                </div>
+                <div class="team-member">
+                    <p class="role">Team Member</p>
+                    <p class="name">Irtiza Ahmed Siddiqi</p>
+                    <p class="id">22K-4211</p>
+                </div>
+                <div class="team-member">
+                    <p class="role">Team Member</p>
+                    <p class="name">Amna Husain</p>
+                    <p class="id">22K-5102</p>
+                </div>
+                <div class="team-member">
+                    <p class="role">Team Member</p>
+                    <p class="name">Jassim Javed</p>
+                    <p class="id">22K-5123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar secondary"></span>
+            <h3>Project Overview</h3>
+        </div>
+        <p class="text-large">
+            PakPulse is a cloud-based web application designed to aggregate, deliver, and crowdsource real-time local news, alerts, and updates tailored specifically for Pakistani communities. Users can receive localized notifications for traffic disruptions, weather alerts, public safety announcements, and local events, and can also contribute community posts with images.
+        </p>
+        <p class="text-large">
+            The system delivers alerts based on user preferences and geolocation, ensuring relevance and immediacy. Built using Microsoft Azure services for hosting, data management, notifications, and user authentication, the app follows a microservices architecture using Golang backends with a React/Next.js frontend.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar accent"></span>
+            <h3>Project Plan</h3>
+        </div>
+
+        <div class="section-border">
+            <h4>Objectives</h4>
+            <ul class="feature-list">
+                <li>
+                    <span class="bullet">•</span>
+                    <span>Develop a cloud-native application with real-time, location-based alerting features</span>
+                </li>
+                <li>
+                    <span class="bullet">•</span>
+                    <span>Allow users to post local updates, including images and text</span>
+                </li>
+                <li>
+                    <span class="bullet">•</span>
+                    <span>Enable real-time notifications via push services and WebSockets</span>
+                </li>
+                <li>
+                    <span class="bullet">•</span>
+                    <span>Use Azure Functions for automated scraping from local news sources and APIs</span>
+                </li>
+                <li>
+                    <span class="bullet">•</span>
+                    <span>Implement CI/CD pipelines for automated deployment</span>
+                </li>
+                <li>
+                    <span class="bullet">•</span>
+                    <span>Provide secure user authentication via social and email logins</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-border secondary">
+            <h4>Scope</h4>
+            <ul class="feature-list">
+                <li>
+                    <span class="bullet secondary">•</span>
+                    <span><strong>Automated Data Scraping:</strong> Collect news and alerts from external sources using Azure Functions</span>
+                </li>
+                <li>
+                    <span class="bullet secondary">•</span>
+                    <span><strong>Microservices Architecture:</strong> Each core feature implemented as a separate Golang microservice</span>
+                </li>
+                <li>
+                    <span class="bullet secondary">•</span>
+                    <span><strong>User-Generated Content:</strong> Allow users to post community alerts with text and images</span>
+                </li>
+                <li>
+                    <span class="bullet secondary">•</span>
+                    <span><strong>Real-Time Notifications:</strong> Deliver localized alerts instantly using WebSockets</span>
+                </li>
+                <li>
+                    <span class="bullet secondary">•</span>
+                    <span><strong>Cloud-Native Deployment:</strong> Host on Azure App Service with PostgreSQL for data management</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-border accent">
+            <h4>Key Features</h4>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h5>User Authentication</h5>
+                    <p>Sign up, log in via Google or email, and manage preferences</p>
+                </div>
+                <div class="feature-item">
+                    <h5>Geo-based Alerts</h5>
+                    <p>Receive alerts based on selected cities or real-time location</p>
+                </div>
+                <div class="feature-item">
+                    <h5>Community Feed</h5>
+                    <p>Post news updates or events with text and images</p>
+                </div>
+                <div class="feature-item">
+                    <h5>Real-Time Updates</h5>
+                    <p>WebSockets for immediate alert delivery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

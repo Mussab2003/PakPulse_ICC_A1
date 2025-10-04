@@ -1,0 +1,201 @@
+﻿@page "/architecture"
+
+<PageTitle>PakPulse - System Architecture</PageTitle>
+
+<section class="hero secondary">
+    <div class="hero-container">
+        <h2>System Architecture</h2>
+        <p>Microservices-Based Cloud-Native Design</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar primary"></span>
+            <h3>Architecture Overview</h3>
+        </div>
+        <p class="text-large">
+            PakPulse follows a <strong>microservices architecture</strong> pattern, where each core functionality is implemented as an independent service. This approach enables scalability, maintainability, and independent deployment of services. The system is built entirely on Microsoft Azure cloud infrastructure, leveraging various Azure services for compute, storage, messaging, and automation.
+        </p>
+        <div class="highlight-box">
+            <p>
+                <strong>Key Architectural Principle:</strong> Each microservice is independently deployable, scalable, and communicates with other services through Azure Service Bus for asynchronous messaging and REST APIs for synchronous communication.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar secondary"></span>
+            <h3>Architecture Layers</h3>
+        </div>
+
+        <div class="layer-card">
+            <div class="layer-header">
+                <div class="layer-number">1</div>
+                <h4>Presentation Layer</h4>
+            </div>
+            <div class="layer-content">
+                <div class="service-card bordered">
+                    <h5>Frontend Application</h5>
+                    <p>Built with <strong>React/Next.js</strong> for a responsive, modern user interface</p>
+                    <ul>
+                        <li>User authentication and profile management</li>
+                        <li>Real-time news feed and community posts</li>
+                        <li>Location-based alert preferences</li>
+                        <li>Image upload and media display</li>
+                    </ul>
+                </div>
+                <div class="service-card bordered">
+                    <h5>Communication</h5>
+                    <p>WebSockets for real-time updates and REST APIs for standard operations</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer-card secondary">
+            <div class="layer-header">
+                <div class="layer-number secondary">2</div>
+                <h4>Application Layer (Microservices)</h4>
+            </div>
+            <div class="layer-content">
+                <div class="service-grid">
+                    <div class="service-box">
+                        <h5>User & Authentication Service</h5>
+                        <p>Handles authentication, user profiles, and preferences management</p>
+                    </div>
+                    <div class="service-box">
+                        <h5>Alert Service (Geo-based Alerts)</h5>
+                        <p>Manages alert creation, distribution, and geo-based filtering</p>
+                    </div>
+                    <div class="service-box">
+                        <h5>Community Posts Service</h5>
+                        <p>Handles community posts, image uploads, and content moderation</p>
+                    </div>
+                    <div class="service-box">
+                        <h5>Notification Service</h5>
+                        <p>Delivers real-time notifications via WebSockets and push notifications</p>
+                    </div>
+                </div>
+                <div class="info-box" style="margin-top: 1rem;">
+                    <p><strong>Technology:</strong> All microservices built with <strong>Golang</strong> for high performance and concurrency</p>
+                    <p><strong>Hosting:</strong> Deployed on <strong>Azure App Service</strong> with auto-scaling capabilities</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer-card accent">
+            <div class="layer-header">
+                <div class="layer-number accent">3</div>
+                <h4>Data Layer</h4>
+            </div>
+            <div class="layer-content">
+                <div class="service-card bordered">
+                    <h5>Azure Database for PostgreSQL</h5>
+                    <p>Stores structured data including:</p>
+                    <ul>
+                        <li>User accounts and authentication data</li>
+                        <li>Alert records and metadata</li>
+                        <li>Community posts and comments</li>
+                        <li>Location and preference data</li>
+                    </ul>
+                </div>
+                <div class="service-card bordered">
+                    <h5>Azure Blob Storage</h5>
+                    <p>Stores unstructured data such as user-uploaded images and media files</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layer-card purple">
+            <div class="layer-header">
+                <div class="layer-number purple">4</div>
+                <h4>Integration & Automation Layer</h4>
+            </div>
+            <div class="layer-content">
+                <div class="service-card bordered">
+                    <h5>Azure Functions (Serverless)</h5>
+                    <p>Automated data scraping pipeline that runs on scheduled triggers:</p>
+                    <ul>
+                        <li>Scrapes local news websites for breaking news</li>
+                        <li>Fetches weather data from external APIs</li>
+                        <li>Collects traffic updates from government sources</li>
+                        <li>Processes and normalizes data before storage</li>
+                    </ul>
+                </div>
+                <div class="service-card bordered">
+                    <h5>Azure Service Bus</h5>
+                    <p>Message broker for asynchronous communication between microservices, ensuring loose coupling and reliability</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar primary"></span>
+            <h3>System Flow</h3>
+        </div>
+        <div class="flow-diagram">
+            <div class="flow-step">
+                <div class="flow-box">User Interface</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box secondary">API Gateway</div>
+            </div>
+            <div class="flow-step indent">
+                <div class="flow-arrow">↓</div>
+            </div>
+            <div class="flow-step indent">
+                <div class="flow-box accent">Microservices</div>
+                <div class="flow-label">(User, Alert, Post, Notification)</div>
+            </div>
+            <div class="flow-step indent">
+                <div class="flow-arrow">↓</div>
+            </div>
+            <div class="flow-step indent">
+                <div class="flow-box purple">Service Bus</div>
+                <div class="flow-label">(Message Queue)</div>
+            </div>
+            <div class="flow-step indent">
+                <div class="flow-arrow">↓</div>
+            </div>
+            <div class="flow-step indent">
+                <div class="flow-box dark">Data Layer</div>
+                <div class="flow-label">(PostgreSQL + Blob Storage)</div>
+            </div>
+            <div class="flow-divider">
+                <div class="flow-step">
+                    <div class="flow-box green">Azure Functions</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-label">Automated scraping feeds data into the system</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="accent-bar accent"></span>
+            <h3>Architectural Benefits</h3>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card primary">
+                <h4>Scalability</h4>
+                <p>Each microservice can scale independently based on demand, ensuring optimal resource utilization</p>
+            </div>
+            <div class="benefit-card secondary">
+                <h4>Reliability</h4>
+                <p>Service isolation ensures that failure in one service doesn't affect others, improving overall system reliability</p>
+            </div>
+            <div class="benefit-card accent">
+                <h4>Maintainability</h4>
+                <p>Independent services allow teams to work on different features simultaneously without conflicts</p>
+            </div>
+            <div class="benefit-card purple">
+                <h4>Performance</h4>
+                <p>Golang microservices provide high performance and efficient concurrency for handling multiple requests</p>
+            </div>
+        </div>
+    </div>
+</main>

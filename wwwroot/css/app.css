@@ -1,0 +1,732 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+    background-color: #0f172a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0ea5e9;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+    .nav-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: color 0.3s;
+        padding-bottom: 0.25rem;
+    }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links a.active {
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 2px solid #0ea5e9;
+        }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0d9488 100%);
+    color: white;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+    .hero.accent {
+        background: linear-gradient(135deg, #f59e0b 0%, #0d9488 100%);
+    }
+
+    .hero.secondary {
+        background: linear-gradient(135deg, #0d9488 0%, #0ea5e9 100%);
+    }
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #dbeafe;
+    text-wrap: balance;
+}
+
+/* Main Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+    .card-header h3 {
+        font-size: 1.875rem;
+        font-weight: bold;
+        color: #0f172a;
+    }
+
+.accent-bar {
+    width: 4px;
+    height: 2rem;
+    border-radius: 2px;
+}
+
+    .accent-bar.primary {
+        background-color: #0ea5e9;
+    }
+
+    .accent-bar.secondary {
+        background-color: #0d9488;
+    }
+
+    .accent-bar.accent {
+        background-color: #f59e0b;
+    }
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Info Box */
+.info-box {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #0ea5e9;
+}
+
+    .info-box.secondary {
+        border-left-color: #0d9488;
+    }
+
+    .info-box p {
+        margin-bottom: 0.25rem;
+    }
+
+    .info-box .label {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin-bottom: 0.25rem;
+    }
+
+    .info-box .value {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+/* Team Member Cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+    .team-member.leader {
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member .role {
+        font-size: 0.875rem;
+        opacity: 0.9;
+        margin-bottom: 0.25rem;
+    }
+
+    .team-member .name {
+        font-weight: bold;
+        font-size: 1.125rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .team-member .id {
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+
+    .team-member.leader .role,
+    .team-member.leader .name,
+    .team-member.leader .id {
+        color: white;
+    }
+
+/* Text Styles */
+.text-large {
+    font-size: 1.125rem;
+    color: #334155;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+
+/* List Styles */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+    .feature-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        color: #334155;
+    }
+
+    .feature-list .bullet {
+        color: #0ea5e9;
+        font-weight: bold;
+        margin-top: 0.25rem;
+    }
+
+        .feature-list .bullet.secondary {
+            color: #0d9488;
+        }
+
+/* Section with Border */
+.section-border {
+    border-left: 4px solid #0ea5e9;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+    .section-border.secondary {
+        border-left-color: #0d9488;
+    }
+
+    .section-border.accent {
+        border-left-color: #f59e0b;
+    }
+
+    .section-border h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #0f172a;
+        margin-bottom: 0.75rem;
+    }
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.feature-item {
+    background-color: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+    .feature-item h5 {
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+        font-size: 0.875rem;
+        color: #64748b;
+    }
+
+/* Architecture Layers */
+.layer-card {
+    border: 2px solid #0ea5e9;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #eff6ff 0%, transparent 100%);
+    margin-bottom: 1.5rem;
+}
+
+    .layer-card.secondary {
+        border-color: #0d9488;
+        background: linear-gradient(135deg, #f0fdfa 0%, transparent 100%);
+    }
+
+    .layer-card.accent {
+        border-color: #f59e0b;
+        background: linear-gradient(135deg, #fffbeb 0%, transparent 100%);
+    }
+
+    .layer-card.purple {
+        border-color: #9333ea;
+        background: linear-gradient(135deg, #faf5ff 0%, transparent 100%);
+    }
+
+.layer-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.layer-number {
+    width: 48px;
+    height: 48px;
+    background-color: #0ea5e9;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+    .layer-number.secondary {
+        background-color: #0d9488;
+    }
+
+    .layer-number.accent {
+        background-color: #f59e0b;
+    }
+
+    .layer-number.purple {
+        background-color: #9333ea;
+    }
+
+.layer-header h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.layer-content {
+    margin-left: 4rem;
+}
+
+.service-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+}
+
+    .service-card.bordered {
+        border-left: 4px solid #0ea5e9;
+    }
+
+    .service-card h5 {
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+        color: #334155;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .service-card ul li {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+            padding-left: 1rem;
+        }
+
+            .service-card ul li::before {
+                content: "• ";
+                margin-left: -1rem;
+                margin-right: 0.5rem;
+            }
+
+/* Service Grid */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.service-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #0ea5e9;
+}
+
+    .service-box.secondary {
+        border-left-color: #0d9488;
+    }
+
+    .service-box.accent {
+        border-left-color: #f59e0b;
+    }
+
+    .service-box.purple {
+        border-left-color: #9333ea;
+    }
+
+    .service-box.green {
+        border-left-color: #16a34a;
+    }
+
+    .service-box.blue {
+        border-left-color: #1e40af;
+    }
+
+    .service-box h5 {
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.25rem;
+    }
+
+    .service-box p {
+        font-size: 0.875rem;
+        color: #64748b;
+    }
+
+/* Flow Diagram */
+.flow-diagram {
+    background: linear-gradient(135deg, #f1f5f9 0%, #dbeafe 100%);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.flow-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+    .flow-step.indent {
+        margin-left: 2rem;
+    }
+
+.flow-box {
+    background-color: #0ea5e9;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    min-width: 200px;
+    text-align: center;
+}
+
+    .flow-box.secondary {
+        background-color: #0d9488;
+    }
+
+    .flow-box.accent {
+        background-color: #f59e0b;
+    }
+
+    .flow-box.purple {
+        background-color: #9333ea;
+    }
+
+    .flow-box.dark {
+        background-color: #0f172a;
+    }
+
+    .flow-box.green {
+        background-color: #16a34a;
+    }
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #94a3b8;
+}
+
+.flow-label {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.flow-divider {
+    margin: 2rem 0;
+    padding-top: 1.5rem;
+    border-top: 2px solid #cbd5e1;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e1;
+}
+
+    .benefit-card.primary {
+        background: linear-gradient(135deg, #eff6ff 0%, transparent 100%);
+        border-color: #bfdbfe;
+    }
+
+    .benefit-card.secondary {
+        background: linear-gradient(135deg, #f0fdfa 0%, transparent 100%);
+        border-color: #99f6e4;
+    }
+
+    .benefit-card.accent {
+        background: linear-gradient(135deg, #fffbeb 0%, transparent 100%);
+        border-color: #fde68a;
+    }
+
+    .benefit-card.purple {
+        background: linear-gradient(135deg, #faf5ff 0%, transparent 100%);
+        border-color: #e9d5ff;
+    }
+
+    .benefit-card h4 {
+        font-weight: bold;
+        color: #0f172a;
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.875rem;
+        color: #334155;
+    }
+
+/* Azure Service Cards */
+.azure-service {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.azure-service-header {
+    padding: 1.5rem;
+    color: white;
+}
+
+    .azure-service-header.primary {
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    }
+
+    .azure-service-header.secondary {
+        background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    }
+
+    .azure-service-header.purple {
+        background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+    }
+
+    .azure-service-header.accent {
+        background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+    }
+
+    .azure-service-header.green {
+        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    }
+
+    .azure-service-header.blue {
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    }
+
+    .azure-service-header h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .azure-service-header .icon {
+        font-size: 1.875rem;
+    }
+
+    .azure-service-header .subtitle {
+        opacity: 0.9;
+        font-size: 1rem;
+    }
+
+.azure-service-body {
+    padding: 1.5rem;
+}
+
+    .azure-service-body h4 {
+        font-weight: bold;
+        color: #0f172a;
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+        .azure-service-body h4:first-child {
+            margin-top: 0;
+        }
+
+    .azure-service-body p {
+        color: #334155;
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #dbeafe;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #ccfbf1 100%);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #0ea5e9;
+    margin-bottom: 1.5rem;
+}
+
+    .highlight-box p {
+        color: #334155;
+        line-height: 1.75;
+    }
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    color: white;
+    padding: 2rem 1.5rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+    footer p {
+        color: #94a3b8;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.125rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .layer-content {
+        margin-left: 0;
+    }
+
+    .flow-step {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .flow-step.indent {
+            margin-left: 0;
+        }
+}
